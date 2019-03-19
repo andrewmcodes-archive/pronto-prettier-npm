@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "pronto/prettier/npm"
+
+require "pry"
+Pry.start
