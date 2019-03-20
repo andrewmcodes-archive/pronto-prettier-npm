@@ -24,15 +24,15 @@ Following options are available:
 
 | Option              | Meaning                                                                                  | Default                                 |
 | ------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------- |
-| prettier_executable | ESLint executable to call.                                                               | `prettier` (calls `prettier` in `PATH`) |
+| prettier_executable | Prettier executable to call.                                                             | `prettier` (calls `prettier` in `PATH`) |
 | files_to_lint       | What files to lint. Absolute path of offending file will be matched against this Regexp. | `(\.js|\.jsx|\.scss)$`                  |
-| cmd_line_opts       | Command line options to pass to eslint when running                                      | ''                                      |
+| cmd_line_opts       | Command line options to pass to prettier when running                                    | ''                                      |
 
-Example configuration to call custom eslint executable and only lint files ending with `.my_custom_extension`:
+Example configuration to call custom prettier executable and only lint files ending with `.my_custom_extension`:
 
 ```yaml
-# .pronto_eslint_npm.yml
-eslint_executable: '/my/custom/node/path/.bin/prettier'
+# .pronto_prettier_npm.yml
+prettier_executable: '/my/custom/node/path/.bin/prettier'
 files_to_lint: '\.my_custom_extension$'
 cmd_line_opts: '--ext .scss,.js,.jsx'
 ```
@@ -53,7 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/pronto-prettier-npm. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/andrewmcodes/pronto-prettier-npm. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
