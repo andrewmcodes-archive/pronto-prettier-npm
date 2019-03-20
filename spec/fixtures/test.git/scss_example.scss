@@ -1,0 +1,23 @@
+div.stripes {
+  background: repeating-linear-gradient(45deg,
+    transparent,
+    blue 10px);
+}
+
+div {
+  color: red;
+
+  font-size: 2rem;
+
+  p {
+    color: blue;
+
+    font-size: 0.5rem;
+  }
+}
+
+body {
+  color: purple;
+
+  font-size: 1rem;
+}
