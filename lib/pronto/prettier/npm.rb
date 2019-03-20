@@ -7,9 +7,7 @@ module Pronto
   module Prettier
     module Npm
       class Error < StandardError; end
-      class << self
-
-      end
+      class << self; end
     end
   end
 end
