@@ -1,10 +1,41 @@
-# Pronto::Prettier::Npm
+# Pronto runner for Prettier using NPM
 
 [![Build Status](https://travis-ci.org/andrewmcodes/pronto-prettier-npm.svg?branch=master)](https://travis-ci.org/andrewmcodes/pronto-prettier-npm)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pronto/prettier/npm`. To experiment with that code, run `bin/console` for an interactive prompt.
+Pronto runner for [Prettier](https://prettier.io), an opinionated code formatter for JavaScript, JSX, and more. [What is Pronto?](https://github.com/mmozuras/pronto)
 
-TODO: Delete this and the text above, and describe your gem
+## Prerequisites
+
+You'll need to install [prettier by yourself with yarn/npm][prettier-install]. If `prettier` is in your `PATH`, everything will simply work, otherwise you have to provide pronto-prettier-npm your custom executable path (see [below](#configuration-of-prettier)).
+
+[prettier-install]: https://prettier.io/docs/en/install.html
+
+## Configuration of Prettier
+
+Configure Prettier like you [normally would][prettier-configuration].
+
+[prettier-configuration]: https://prettier.io/docs/en/configuration.html
+
+## Configuration of Prettier::NPM
+
+`pronto-prettier-npm` can be configured by placing a `.pronto_prettier_npm.yml` inside the directory where Pronto is run.
+
+Following options are available:
+
+| Option              | Meaning                                                                                  | Default                                 |
+| ------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------- |
+| prettier_executable | ESLint executable to call.                                                               | `prettier` (calls `prettier` in `PATH`) |
+| files_to_lint       | What files to lint. Absolute path of offending file will be matched against this Regexp. | `(\.js|\.jsx|\.scss)$`                  |
+| cmd_line_opts       | Command line options to pass to eslint when running                                      | ''                                      |
+
+Example configuration to call custom eslint executable and only lint files ending with `.my_custom_extension`:
+
+```yaml
+# .pronto_eslint_npm.yml
+eslint_executable: '/my/custom/node/path/.bin/prettier'
+files_to_lint: '\.my_custom_extension$'
+cmd_line_opts: '--ext .scss,.js,.jsx'
+```
 
 ## Installation
 
@@ -13,18 +44,6 @@ Add this line to your application's Gemfile:
 ```ruby
 gem 'pronto-prettier-npm'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install pronto-prettier-npm
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
